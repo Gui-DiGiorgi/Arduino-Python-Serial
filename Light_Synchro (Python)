@@ -1,0 +1,28 @@
+# This first part makes it easy to get the right format the arduino to read it right
+# The code list is the list for which lights to light up, and times are the miliseconds that that light will light up
+# The new_song will be the right format for the arduino code
+
+a = 'a'
+b = 'b'
+c = 'c'
+d = 'd'
+
+code = [a,a,b,c,d,c,d,b,d,d,a,b,c]
+
+times = [200,200,500,200,200,500,500,200,200,200,200,200,500]
+
+song = []
+
+for c,t in zip(code,times):
+    song.append([c,t])
+   
+new_song = []
+
+for s in song:
+    ss = s[0]+' '+str(s[1])
+    new_song.append([ss])
+    
+for i in range(len(new_song)):
+    new_song[i].append(song[i][1])
+    
+print(new_song)
