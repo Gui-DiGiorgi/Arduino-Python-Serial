@@ -19,6 +19,31 @@ class slider():
     def draw(self,window):
         pygame.draw.rect(win,self.color,(self.x,self.y,self.width,self.height))
         
+def pyformat(a):
+
+    a_final = ""
+    
+    for i in a:
+        a_final+=str(i)
+        a_final+=' '
+        
+    a_final = a_final[0:(len(a_final)-1)]
+    
+    return a_final
+    
+def send_bytes(serial_name,string):
+        
+    bu = string
+    
+    byaa = []
+    
+    for i in bu:
+        byaa.append(i.encode('utf-8')) 
+    byaa.append(b'\n')
+    
+    for b in byaa:
+        serial_name.write(b)
+        
 ser = serial.Serial('COM5', 9600)
 if not ser.isOpen():
     ser.open()
