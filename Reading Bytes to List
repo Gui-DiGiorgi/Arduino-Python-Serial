@@ -1,4 +1,4 @@
-# It should collect the arduino sent lines in lists, which include the words on that line as items on the list
+# It should collect the arduino sent lines in lists, which include the numbers on that line as items on the list if not bigger than 255
 
 import serial
 
