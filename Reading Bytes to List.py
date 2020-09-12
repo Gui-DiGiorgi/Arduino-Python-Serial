@@ -1,5 +1,22 @@
 # It should collect the arduino sent lines in lists, which include the numbers on that line as items on the list if not bigger than 255
 
+def direction_test(numbers):
+    
+    joy_values = numbers
+    
+    d = ""
+    
+    if (joy_values[1]<90) and (abs(joy_values[1]-90)>=abs(joy_values[0]-90)):
+        d = "0 #Up"
+    if (joy_values[1]>=90) and (abs(joy_values[1]-90)>=abs(joy_values[0]-90)):
+        d = "1 #Down"
+    if (joy_values[0]<90) and (abs(joy_values[0]-90)>=abs(joy_values[1]-90)):
+        d = "2 #Left"
+    if (joy_values[0]>=90) and (abs(joy_values[0]-90)>=abs(joy_values[1]-90)):
+        d = "3 #Right"
+        
+    return d
+
 import serial
 
 c=""
