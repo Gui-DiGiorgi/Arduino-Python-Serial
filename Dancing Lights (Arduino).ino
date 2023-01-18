@@ -22,11 +22,11 @@ int detection_delay = 500;
 
 void setup() {
   Serial.begin(9600);
-  for (int i; i<n_pins; i++){
+  for (int i = 0; i<n_pins; i++){
     pinMode(pins[i],OUTPUT);
   }
   
-  for (int i; i<n_pins; i++){
+  for (int i = 0; i<n_pins; i++){
     digitalWrite(pins[i],LOW);
   }
 
@@ -44,7 +44,7 @@ void loop() {
 
     int no_sound = 0;
     
-    for (int i; i<n_pins; i++){
+    for (int i = 0; i<n_pins; i++){
       if (bytes[0] == code[i]){
         chosen_light = i;
         no_sound++;
